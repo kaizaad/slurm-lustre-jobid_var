@@ -57,8 +57,8 @@ int main(int argc, char** argv)
 	// Get the # of bytes to add to keep slurm_tuplet <= MAXSIZE - 1
 	if (slurm_job_account == NULL) {
 		fprintf(stderr,"SLURM_JOB_ACCOUNT is NULL!\n");
-        return (EXIT_FAILURE);
-    } else {
+		return (EXIT_FAILURE);
+	} else {
 		sbytes_leftover = (MAXSIZE - 1) - (strlen(slurm_tuplet));
 		strncat(slurm_tuplet,slurm_job_account,sbytes_leftover);
 	}
